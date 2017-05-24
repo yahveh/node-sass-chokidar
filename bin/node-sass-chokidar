@@ -41,7 +41,7 @@ var cli = meow({
     '    --source-map true --source-map-contents sass',
     '',
     'Options',
-    '  -w, --watch                Watch a directory or file, will compile initially unless specified',
+    '  -w, --watch                Watch a file or directory for changes',
     '  -r, --recursive            Recursively watch directories or files (always true, non-configurable)',
     '  -o, --output               Output directory',
     '  -x, --omit-source-map-url  Omit source map URL comment from output',
@@ -321,10 +321,10 @@ function run(options, emitter) {
 
 
   if (!options.skipInitial) {
-    renderDirOrFile(options, emitter)
+    renderDirOrFile(options, emitter);
   }
   if (options.watch) {
-    watch(options, emitter)
+    watch(options, emitter);
   }
 }
 
@@ -337,9 +337,9 @@ function run(options, emitter) {
  */
 function renderDirOrFile(options, emitter) {
   if (options.directory) {
-    renderDir(options, emitter)
+    renderDir(options, emitter);
   } else {
-    render(options, emitter)
+    render(options, emitter);
   }
 }
 
