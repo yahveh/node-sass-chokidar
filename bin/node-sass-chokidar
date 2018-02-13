@@ -255,7 +255,8 @@ function watch(options, emitter) {
   }
 
   var watcher = chokidar.watch(paths, {
-    followSymlinks: options.follow
+    followSymlinks: options.follow,
+    usePolling: true
   });
 
   watcher.on('error', function(error) {
